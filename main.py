@@ -67,7 +67,7 @@ def populate_table():
     con.commit()
     con.close()
 
-def print_table():
+def fetch_table():
     # Note: The ORDER BY was added to sort the returned list.
     #       con.commit() was not necessary when no modifications are made to the table.
     """ Print entire table by order of lastname. """
@@ -121,7 +121,7 @@ def search_lastname_partial_fullname(find):
 
 def main():
     # Note: It is more efficient to keep the connection open and execute each command,
-    #       but in this tutorial connecting and closing was used to illustrate the processes needed for each function independantly.
+    #       but in this tutorial connecting and closing was used to illustrate the processes needed for each function independently.
     """ How to use each function. """
     drop_table()
     if create_table():
@@ -129,7 +129,7 @@ def main():
         person = ('Neo', 'ThomasAnderson@gmail.com', 'Thomas', 'Anderson', 'Thomas Anderson is a Computer Programmer.', 'Computer Programmer')
         insert_table(person)
         populate_table()
-        items = print_table()
+        items = fetch_table()
         for i in items:
             print(i)
 
